@@ -1,0 +1,27 @@
+= downager
+
+* {Homepage}[https://rubygems.org/gems/downager]
+* {Documentation}[http://rubydoc.info/gems/downager/frames]
+* {Email}[mailto:mfeckie at gmail.com]
+
+== Description
+
+TODO: Description
+
+== Features
+
+== Examples
+
+  require 'downager'
+
+== Requirements
+
+== Install
+
+  $ gem install downager
+
+== Copyright
+
+Copyright (c) 2013 Martin Feckie
+
+See LICENSE.txt for details.
