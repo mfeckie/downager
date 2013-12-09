@@ -17,9 +17,13 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ['lib']
 
+  gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'rspec-mocks'
   gem.add_development_dependency 'rubygems-tasks'
   gem.add_development_dependency 'guard-rspec'
   gem.add_development_dependency 'growl'
+  gem.add_development_dependency 'fuubar'
+
 
 end
