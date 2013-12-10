@@ -14,12 +14,12 @@ describe ArchiveStructure do
 
   it "creates an ArchiveStructure class" do
     a = ArchiveStructure.new
-    a.class.should == ArchiveStructure
+    expect(a.class).to eq(ArchiveStructure)
   end
 
   it "takes the user account" do
     a = ArchiveStructure.new(namespace: 'test_account')
-    a.namespace.should == 'test_account'
+    expect(a.namespace).to eq('test_account')
   end
 
 end

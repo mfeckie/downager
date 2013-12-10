@@ -20,7 +20,7 @@ describe Archiver do
       end
     end
     output_file_list = Dir.entries(Dir.pwd + '/spec/sample_output_files/')
-    output_file_list.include?('zipped_directory.zip').should == true
+    expect(output_file_list.include?('zipped_directory.zip')).to eq(true)
   end
 
   it "creates directories" do
