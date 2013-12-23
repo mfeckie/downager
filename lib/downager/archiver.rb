@@ -24,7 +24,7 @@ module Downager
       end
     end
 
-    private                                         x
+    private
 
     def switch_database
       switcher.switch
