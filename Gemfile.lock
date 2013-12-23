@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     downager (0.1.0)
+      rubyzip
 
 GEM
   remote: https://rubygems.org/

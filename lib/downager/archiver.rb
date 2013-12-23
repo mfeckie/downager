@@ -1,4 +1,3 @@
-require 'zip'
 
 module Downager
   class Archiver
