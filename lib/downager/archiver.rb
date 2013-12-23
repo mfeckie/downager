@@ -1,4 +1,4 @@
-
+require 'zip'
 module Downager
   class Archiver
     attr_accessor :namespace, :input_file_array, :switcher, :root_path
@@ -24,7 +24,7 @@ module Downager
       end
     end
 
-    private
+    private                                         x
 
     def switch_database
       switcher.switch

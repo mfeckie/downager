@@ -5,7 +5,7 @@ require File.expand_path('../lib/downager/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.name          = "downager"
   gem.version       = Downager::VERSION
-  gem.summary       = %q{Downager is a structured archive create for zipped downloads}
+  gem.summary       = %q{Downager is a structured archive creator for zipped downloads}
   gem.description   = %q{Work in progress}
   gem.license       = "MIT"
   gem.authors       = ["Martin Feckie"]
