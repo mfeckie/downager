@@ -2,7 +2,7 @@ require 'zip'
 
 module Downager
   class Archiver
-    attr_reader :namespace, :input_file_array, :switcher, :root_path
+    attr_accessor :namespace, :input_file_array, :switcher, :root_path
 =begin
      input_file_array is expected in the format ["full file path", "directory file to be stored in", "file_name"]
       For example ["home/somewhere/file_1.txt", "1.1.1", "file_1.txt"]
@@ -20,7 +20,7 @@ module Downager
       create_output_directory
       Zip::File.open(root_path + "/#{namespace}" + '/zipped_file.zip', Zip::File::CREATE) do |zipfile|
         input_file_array.each do |file|
-          zipfile.add("#{file[0]}/#{file[2]}", file[1])
+          zipfile.add("#{file[0]}/#{file[1]}", file[2]) unless file.empty?
         end
       end
     end
