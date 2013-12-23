@@ -11,15 +11,15 @@ module Downager
       @input_file_array = input_file_array
       @switcher = switcher
       @root_path = root_path
-      @switcher.switch unless @switcher.nil?
+      @switcher.switch(@namespace) unless @switcher.nil? || @namespace.nil?
     end
 
 
     def create_zip
       create_output_directory
-      Zip::File.open(root_path + "/#{namespace}" + '/zipped_file.zip', Zip::File::CREATE) do |zipfile|
+      Zip::File.open(root_path + "/#{namespace}/#{namespace}-#{Time.now.strftime('%Y-%m-%d-%H%M')}.zip" , Zip::File::CREATE) do |zipfile|
         input_file_array.each do |file|
-          zipfile.add("#{file[0]}/#{file[1]}", file[2]) unless file.empty?
+          zipfile.add("#{file[0]}/#{file[1]}", file[2]) unless file.empty? || file.nil?
         end
       end
     end

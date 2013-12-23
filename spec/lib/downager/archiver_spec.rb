@@ -31,25 +31,22 @@ describe Archiver do
   describe "instance methods" do
     let(:archiver) { Archiver.new(namespace: 'test', input_file_array: files_for_test, switcher: Apartment::Database, root_path: Rails.root + '/sample_output_files') }
     after :each do
-      if File.exists?(Dir.pwd + '/spec/sample_output_files/test/zipped_file.zip')
-        File.delete(Dir.pwd + '/spec/sample_output_files/test/zipped_file.zip')
-        Dir.delete(Dir.pwd + '/spec/sample_output_files/test')
-      end
+      Dir.glob(Dir.pwd + '/spec/sample_output_files/test/*.zip').each {|f| File.delete(f)}
     end
 
     it "can process the input file array" do
       arch = archiver
       arch.create_zip
-      output_file_list = Dir.entries(Dir.pwd + '/spec/sample_output_files/test')
-      expect(output_file_list.include?('zipped_file.zip')).to eq(true)
+      output_file_list = Dir.entries(Dir.pwd + '/spec/sample_output_files/test').to_s
+      expect(output_file_list.include?('test')).to eq(true)
     end
 
     it "Deals with blank array entries gracefully" do
       arch = archiver
       archiver.input_file_array = files_with_gaps
       arch.create_zip
-      output_file_list = Dir.entries(Dir.pwd + '/spec/sample_output_files/test')
-      expect(output_file_list.include?('zipped_file.zip')).to eq(true)
+      output_file_list = Dir.entries(Dir.pwd + '/spec/sample_output_files/test').to_s
+      expect(output_file_list.include?('test')).to eq(true)
     end
 
   end
