@@ -5,6 +5,7 @@ module Downager
 =begin
      input_file_array is expected in the format ["full file path", "directory file to be stored in", "file_name"]
       For example ["home/somewhere/file_1.txt", "1.1.1", "file_1.txt"]
+      The swticher is an object that allow you to swtich to a difference namespace, such as with the Apartment gem, it's optional
 =end
     def initialize(namespace: nil, input_file_array: nil, switcher: nil, root_path: nil)
       @namespace = namespace
